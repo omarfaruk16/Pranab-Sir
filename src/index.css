@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy-950: #0a0f1a;
+    --color-navy-900: #0f172a;
+    --color-navy-800: #1e293b;
+    --color-accent: #059669;
+    --color-accent-hover: #10b981;
+  }
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply font-sans text-navy-800 bg-neutral-paper text-base leading-relaxed;
+  }
+  .dark body {
+    @apply bg-navy-950 text-neutral-mist;
+  }
+}
+
+@layer components {
+  .container-grid {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-12 gap-6 lg:gap-8;
+  }
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  .heading-serif {
+    @apply font-serif font-semibold tracking-tight;
+  }
+  .separator {
+    @apply h-px bg-gradient-to-r from-transparent via-neutral-mist to-transparent dark:via-navy-700;
+  }
+}
+
+/* Skip to content for a11y */
+.skip-link {
+  @apply absolute -top-full left-6 z-[100] px-4 py-2 bg-accent-emerald text-white rounded focus:top-4 focus:outline-none focus:ring-2 focus:ring-accent-emerald;
+}
+
+/* Global hover and animation utilities */
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-200;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.06);
+  }
+  .hover-card {
+    @apply transition-all duration-200;
+  }
+  .hover-card:hover {
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 10px -5px rgb(0 0 0 / 0.04);
+    border-color: rgba(5, 150, 105, 0.4);
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
