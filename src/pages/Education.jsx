@@ -12,9 +12,10 @@ const EducationJourney = () => {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-navy-900 dark:text-white">
-            Education & Research
+          <h2 className="heading-serif text-4xl font-extrabold text-white  text-center tracking-tight">
+            Education & <span className="text-green-400">Research</span>
           </h2>
+
           <div className="w-20 h-1.5 bg-accent-emerald mx-auto mt-4 rounded-full" />
         </div>
 
@@ -25,13 +26,13 @@ const EducationJourney = () => {
 
           {educationTimeline.map((item, index) => {
             const isEven = index % 2 === 0;
-            
+
             return (
               <div key={index} className="relative mb-12 flex justify-start md:justify-between items-center w-full">
-                
+
                 {/* Desktop Left Side */}
                 <div className="hidden md:block w-[45%]">
-                   {isEven && <TimelineCard item={item} categoryLabel={categoryLabel} />}
+                  {isEven && <TimelineCard item={item} categoryLabel={categoryLabel} />}
                 </div>
 
                 {/* The Timeline Dot */}
@@ -41,13 +42,13 @@ const EducationJourney = () => {
 
                 {/* Content Side */}
                 <div className="pl-10 md:pl-0 w-full md:w-[45%]">
-                   {!isEven ? (
-                     <TimelineCard item={item} categoryLabel={categoryLabel} />
-                   ) : (
-                     <div className="md:hidden">
-                        <TimelineCard item={item} categoryLabel={categoryLabel} />
-                     </div>
-                   )}
+                  {!isEven ? (
+                    <TimelineCard item={item} categoryLabel={categoryLabel} />
+                  ) : (
+                    <div className="md:hidden">
+                      <TimelineCard item={item} categoryLabel={categoryLabel} />
+                    </div>
+                  )}
                 </div>
               </div>
             );
@@ -82,7 +83,7 @@ const TimelineCard = ({ item, }) => (
     <p className="text-sm text-neutral-stone dark:text-navy-400 mt-1">
       {item.org}
     </p>
-    
+
 
     {item.achievements && (
       <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-navy-800">

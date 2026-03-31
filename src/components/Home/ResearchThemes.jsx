@@ -15,13 +15,14 @@ export default function ResearchThemes() {
   return (
     <section className="section-padding bg-neutral-paper dark:bg-navy-950">
       <div className="container-grid">
-        <div className="col-span-12 mb-12">
+        <div className="col-span-12 text-center mb-12">
           <h2 className="heading-serif text-3xl lg:text-4xl text-navy-900 dark:text-white">
             Research themes
           </h2>
-          <p className="mt-2 text-neutral-stone dark:text-navy-500 max-w-xl">
+          <p className="mt-2 text-neutral-stone dark:text-navy-500">
             Lab-grade pillars that define my research — explore in depth on the Research page.
           </p>
+          <div className="w-16 h-1 bg-accent-emerald mx-auto mt-4 mb-4 rounded-full" />
         </div>
         <div className="col-span-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {researchThemes.map((theme, i) => (

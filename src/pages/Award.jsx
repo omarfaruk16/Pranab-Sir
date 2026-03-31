@@ -9,7 +9,6 @@ const AcademicAwards = () => {
   const [typeFilter, setTypeFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [yearRange, setYearRange] = useState([1990, 2026]);
-  const [categoryFilter, setCategoryFilter] = useState(null);
 
   const typeLabel = (t) => {
     if (!t) return "All";
@@ -24,14 +23,6 @@ const AcademicAwards = () => {
     if (y == null) return null;
     const n = Number(String(y).match(/\d{4}/)?.[0]);
     return Number.isFinite(n) ? n : null;
-  };
-
-  const hasCategory = (item, cat) => {
-    if (!cat) return true;
-    const target = String(cat).toLowerCase();
-    return (item.categories || []).some(
-      (c) => String(c).toLowerCase() === target,
-    );
   };
 
   const FILTERS = useMemo(
@@ -53,14 +44,6 @@ const AcademicAwards = () => {
     });
     return map;
   }, [FILTERS]);
-
-  const allCategories = useMemo(() => {
-    const set = new Set();
-    academicAwards.forEach((a) =>
-      (a.categories || []).forEach((c) => set.add(c)),
-    );
-    return Array.from(set).sort();
-  }, []);
 
   const fuse = useMemo(
     () =>
@@ -98,17 +81,13 @@ const AcademicAwards = () => {
       return s <= maxY && e >= minY;
     });
 
-    // category
-    if (categoryFilter)
-      list = list.filter((x) => hasCategory(x, categoryFilter));
-
     // newest first
     return [...list].sort(
       (a, b) =>
         (toYear(b.year ?? b.startYear) || 0) -
         (toYear(a.year ?? a.startYear) || 0),
     );
-  }, [typeFilter, search, yearRange, categoryFilter, fuse]);
+  }, [typeFilter, search, yearRange, fuse]);
 
   return (
     <section className="py-20 bg-white dark:bg-navy-950 transition-colors duration-300 overflow-hidden">
@@ -142,7 +121,7 @@ const AcademicAwards = () => {
 
           {/* Type pills */}
           <div className="lg:col-span-7">
-            <label className="block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">
+            <label className=" block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">
               Type
             </label>
             <div className="flex flex-wrap gap-2 justify-start lg:justify-end">
@@ -195,44 +174,7 @@ const AcademicAwards = () => {
             </div>
           </div>
 
-          {/* Category */}
-          <div className="lg:col-span-8">
-            <label className="block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">
-              Category
-            </label>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => setCategoryFilter(null)}
-                className={[
-                  "text-xs px-3 py-1.5 rounded-lg transition-colors",
-                  !categoryFilter
-                    ? "bg-accent-emerald text-white"
-                    : "bg-neutral-100 dark:bg-navy-900/50 text-navy-700 dark:text-neutral-stone hover:bg-neutral-200 dark:hover:bg-navy-800",
-                ].join(" ")}
-              >
-                All
-              </button>
-
-              {allCategories.map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() =>
-                    setCategoryFilter(categoryFilter === c ? null : c)
-                  }
-                  className={[
-                    "text-xs px-3 py-1.5 rounded-lg transition-colors",
-                    categoryFilter === c
-                      ? "bg-accent-emerald text-white"
-                      : "bg-neutral-100 dark:bg-navy-900/50 text-navy-700 dark:text-neutral-stone hover:bg-neutral-200 dark:hover:bg-navy-800",
-                  ].join(" ")}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
+          
         </div>
 
         {/* Timeline Container */}

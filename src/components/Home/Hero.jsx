@@ -6,6 +6,7 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { profile } from "../../data/content";
 import hero_img from "../../images/hero.webp"; 
+import Resume_Pranab from "../../assets/Resume_Pranab Panday.pdf"
 
 function Typewriter({ text, speed = 80, delay = 400 }) {
   const [display, setDisplay] = useState("");
@@ -44,7 +45,7 @@ export default function Hero() {
         aria-hidden
       />
 
-      <div className="flex md:flex-row flex-col items-center justify-center relative z-10">
+      <div className="flex mt-4 mx-4 md:flex-row flex-col items-center justify-center relative z-10">
         <motion.div
           className="col-span-12 lg:col-span-7"
           initial={{ opacity: 0, y: 24 }}
@@ -93,7 +94,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href={profile.cvUrl}
+              href={Resume_Pranab}
               download
               className="inline-flex items-center px-5 py-3 rounded-lg bg-accent-emerald text-white font-medium hover:bg-accent-emerald-light transition-all shadow-lg shadow-accent-emerald/20"
             >

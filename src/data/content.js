@@ -4,11 +4,11 @@ export const profile = {
   affiliations: ['University of Rajshahi', 'Adjunct / Research Center roles'],
   location: 'Rajshahi, Bangladesh',
   mission: 'Advancing public policy research and governance innovation through evidence-based analysis, with focus on urban development, social accountability, and gender-inclusive governance in South Asia.',
-  email: 'pranab@example.edu',
+  email: 'pranabpanday@yahoo.com',
   office: 'Department of Public Administration',
   address: 'University of Rajshahi, Rajshahi 6205, Bangladesh',
   mobile: ['+88 01741-081664 (Cell)', '+88 0721-711923 (Office)', '+88 02588866922 (Residence)'],
-  cvUrl: '/cv.pdf',
+  cvUrl: '',
   calendlyUrl: 'https://calendly.com/pranab-panday',
   scholarUrl: 'https://scholar.google.com/citations?user=example',
   researchGateUrl: 'https://www.researchgate.net/profile/Pranab-Panday',
@@ -83,16 +83,36 @@ export const skillsData = [
 
 export const featuredWork = {
   books: [
-    { id: 1, title: 'Governance and Public Policy in Bangladesh', year: 2023, cover: null, doi: null, why: 'Comprehensive volume on governance reforms in Bangladesh.' },
-    { id: 2, title: 'Gender and Local Governance', year: 2022, cover: null, doi: null, why: 'Evidence on gender-inclusive local government.' },
-    { id: 3, title: 'Social Accountability in South Asia', year: 2021, cover: null, doi: null, why: 'Cross-country analysis of accountability mechanisms.' },
+    { id: 1, title: 'Inclusive Governance and Marginalised Communities in South Asia: The Case of Bangladesh.', year: 2025, Published: 'London and New delhi: Oxford University Press (Accepted)' },
+    { id: 2, title: 'Resource Mobilisation in South Asia: Local Governance and Financial Sustainability in Bangladesh.', year: 2025, Published: 'London: Routledge (In Press)' },
+    { id: 3, title: "Digital Revolution for the Vulnerable: The Untold Story of Bangladesh's Social Safety Net Transformation", year: 2025, Published: 'Singapore: Palgrave Macmillan (In Press)' }
   ],
   articles: [
-    { id: 1, title: 'Decentralization and Service Delivery', venue: 'Public Administration Review', year: 2023, doi: '10.1000/xyz', why: 'Impact on local service quality.' },
-    { id: 2, title: 'Women in Local Government', venue: 'Governance', year: 2022, doi: '10.1000/abc', why: 'Barriers and enablers to participation.' },
-    { id: 3, title: 'Policy Implementation in Developing Contexts', venue: 'Policy Studies Journal', year: 2021, doi: null, why: 'Framework for implementation analysis.' },
-  ],
-  projects: [
+    {
+      id: 1,
+      title: 'Book Review: Citizenship and Genocide Cards',
+      venue: 'International Migration Review',
+      year: 2026,
+      doi: null,
+      why: 'Book review on citizenship and genocide discourse.'
+    },
+    {
+      id: 2,
+      title: "Nested Feminisms: How Institutional Designs Shape Women's Activism in Australia and Bangladesh",
+      venue: 'Politics and Policy',
+      year: 2025,
+      doi: null,
+      why: "Examines how institutional structures influence women's activism."
+    },
+    {
+      id: 3,
+      title: "The Rohingya: An Ethnography of ‘Subhuman’ Life — Unveiling Statelessness: Critical Reflections on Uddin’s Rohingya Ethnography",
+      venue: 'Journal of Refugee Studies',
+      year: 2025,
+      doi: null,
+      why: 'Critical reflection on Rohingya ethnography and statelessness.'
+    }],
+  paper: [
     { id: 1, title: 'UNDP Local Governance Assessment', org: 'UNDP', year: 2023, why: 'National-level policy input.' },
     { id: 2, title: 'Oxfam Gender & Governance Programme', org: 'Oxfam', year: 2022, why: 'Regional capacity building.' },
     { id: 3, title: 'World Vision Baseline Study', org: 'World Vision', year: 2021, why: 'Evidence for programme design.' },
@@ -220,11 +240,11 @@ export const educationTimeline = [
   }
 ];
 
-export const awards = [
-  { title: 'Fulbright Scholar', body: 'Fulbright', year: '2010', type: 'International' },
-  { title: 'UGC Research Award', body: 'University Grants Commission', year: '2018', type: 'National' },
-  { title: 'Best Paper Award', body: 'APSA Conference', year: '2019', type: 'International' },
-  { title: 'University Gold Medal', body: 'University of Rajshahi', year: '1995', type: 'University' },
+export const homeawards = [
+  { title: 'Human Rights Personality Award-2019', provider: 'Bengal Human Rights Foundation, Dhaka.', year: '2019', type: 'National' },
+  { title: 'Mother Teresa Gold Medal-2019', provider: 'Mother Teresa Foundation, Dhaka', year: '2019', type: 'National' },
+  { title: 'Senior Fulbright Visiting Fellowship (2012)', provider: 'Cornell University, USA,', year: '2012', type: 'International' },
+  { title: 'Outstanding Performance Achievement Award', provider: 'City University of Hong Kong', year: '2006-2008', type: 'International' },
 ]
 
 export const partners = [
@@ -264,7 +284,7 @@ export const navMenu = [
   {
     label: 'Academic',
     children: [
-      { path: '/teaching', label: 'Teaching' },
+      { path: '/teaching', label: 'Teaching Experience' },
       { path: '/supervisory', label: 'Supervisory' },
     ],
   },

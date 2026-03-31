@@ -233,42 +233,6 @@ export default function Supervision() {
                 />
               </div>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">
-                Category filter
-              </label>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={() => setCategoryFilter(null)}
-                  className={`text-xs px-3 py-1.5 rounded-lg ${
-                    !categoryFilter
-                      ? "bg-accent-emerald text-white"
-                      : "bg-neutral-mist/60 dark:bg-navy-700"
-                  }`}
-                >
-                  All
-                </button>
-
-                {allCategories.map((c) => (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() =>
-                      setCategoryFilter(categoryFilter === c ? null : c)
-                    }
-                    className={`text-xs px-3 py-1.5 rounded-lg ${
-                      categoryFilter === c
-                        ? "bg-accent-emerald text-white"
-                        : "bg-neutral-mist/60 dark:bg-navy-700 hover:bg-navy-200 dark:hover:bg-navy-600"
-                    }`}
-                  >
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </div>
           </aside>
 
           {/* Results */}

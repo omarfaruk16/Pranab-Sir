@@ -6,6 +6,7 @@ import Timeline from '../components/Home/Timeline'
 import TrustRecognition from '../components/Home/TrustRecognition'
 import CTAStrip from '../components/Home/CTAStrip'
 import Skills from '../components/Home/Skills'
+import EducationJourney from './Education'
 
 
 export default function Home() {
@@ -17,12 +18,14 @@ export default function Home() {
       <div className="separator" />
       <Skills></Skills>
       <div className="separator" />
+      <EducationJourney />
+      <div className="separator" />
       <Timeline />
       <div className="separator" />
       <ResearchThemes />
       <div className="separator" />
       <FeaturedWork />
-      
+
       <div className="separator" />
       <TrustRecognition />
       <div className="separator" />

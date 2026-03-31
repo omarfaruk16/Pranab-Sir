@@ -198,19 +198,6 @@ export default function ResearchData() {
     <div className="bg-neutral-paper dark:bg-navy-950 min-h-screen">
       <section className="section-padding">
         <div className="container-grid">
-          <div className="col-span-12 mb-8">
-            <motion.h1
-              className="heading-serif text-4xl lg:text-5xl text-navy-900 dark:text-white"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              Research
-            </motion.h1>
-            <p className="mt-2 text-navy-700 dark:text-neutral-stone max-w-xl">
-              Research grants and consultancy experiences. Search by title, sponsor, keyword; filter by year range and
-              categories.
-            </p>
-          </div>
 
           {/* Filters (same style as Publications) */}
           <aside className="col-span-12 lg:col-span-4 space-y-6">
@@ -245,38 +232,6 @@ export default function ResearchData() {
                   onChange={(e) => setYearRange([yearRange[0], Number(e.target.value)])}
                   className="w-20 px-2 py-2 rounded border border-neutral-mist dark:border-navy-700 bg-white dark:bg-navy-800"
                 />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">
-                Category filter
-              </label>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={() => setCategoryFilter(null)}
-                  className={`text-xs px-3 py-1.5 rounded-lg ${
-                    !categoryFilter ? 'bg-accent-emerald text-white' : 'bg-neutral-mist/60 dark:bg-navy-700'
-                  }`}
-                >
-                  All
-                </button>
-
-                {allCategories.map((c) => (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() => setCategoryFilter(categoryFilter === c ? null : c)}
-                    className={`text-xs px-3 py-1.5 rounded-lg ${
-                      categoryFilter === c
-                        ? 'bg-accent-emerald text-white'
-                        : 'bg-neutral-mist/60 dark:bg-navy-700 hover:bg-navy-200 dark:hover:bg-navy-600'
-                    }`}
-                  >
-                    {c}
-                  </button>
-                ))}
               </div>
             </div>
           </aside>

@@ -28,8 +28,7 @@ function CopyCitation({ item, type }) {
   )
 }
 
-function ItemCard({ item, type, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen)
+function ItemCard({ item, type }) {
   return (
     <motion.div
       layout
@@ -58,25 +57,6 @@ function ItemCard({ item, type, defaultOpen = false }) {
             )}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className="mt-3 text-sm font-medium text-accent-emerald dark:text-accent-emerald-light hover:underline"
-        >
-          {open ? 'Hide' : 'Why it matters'}
-        </button>
-        <AnimatePresence>
-          {open && item.why && (
-            <motion.p
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="text-sm text-neutral-stone dark:text-navy-400 mt-2"
-            >
-              {item.why}
-            </motion.p>
-          )}
-        </AnimatePresence>
       </div>
     </motion.div>
   )
@@ -87,11 +67,12 @@ export default function FeaturedWork() {
     <section className="section-padding bg-white dark:bg-navy-900/50">
       <div className="container-grid">
         <div className="col-span-12 mb-12">
-          <h2 className="heading-serif text-3xl lg:text-4xl text-navy-900 dark:text-white">
+          <h2 className="heading-serif text-center text-3xl lg:text-4xl text-navy-900 dark:text-white">
             Featured work
           </h2>
-          <p className="mt-2 text-neutral-stone dark:text-navy-500 max-w-xl">
-            Curated books, journal articles, and policy/consultancy highlights.
+          <p className="mt-2 text-neutral-stone text-center dark:text-navy-500 ">
+            <div className="w-16 h-1 bg-accent-emerald mb-4 mx-auto mt-4 rounded-full" />
+            My recent Publications are listed here including Published Books, Book Manuscripts, Chapters in Books, Journal Articals, Research Reports, Conference Paper and Presentations
           </p>
         </div>
 
@@ -104,7 +85,7 @@ export default function FeaturedWork() {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-4 mt-8 lg:mt-0">
-          <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white mb-4">Top articles</h3>
+          <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white mb-4">Recent articles</h3>
           <div className="space-y-4">
             {featuredWork.articles.map((item) => (
               <ItemCard key={item.id} item={item} type="article" />
@@ -112,9 +93,9 @@ export default function FeaturedWork() {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-4 mt-8 lg:mt-0">
-          <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white mb-4">Key projects</h3>
+          <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white mb-4">Recent Conference Papers and Presentations</h3>
           <div className="space-y-4">
-            {featuredWork.projects.map((item) => (
+            {featuredWork.paper.map((item) => (
               <ItemCard key={item.id} item={item} type="project" />
             ))}
           </div>

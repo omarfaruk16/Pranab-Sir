@@ -74,7 +74,7 @@ export default function Timeline() {
         {/* Header */}
         <div className="col-span-12 text-center mb-16">
           <h2 className="heading-serif text-3xl lg:text-4xl text-navy-900 dark:text-white">
-            Teaching Experience
+            Teaching <span className="text-green-400">Experience</span>
           </h2>
           <div className="w-16 h-1 bg-accent-emerald mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-neutral-stone dark:text-navy-500 max-w-xl mx-auto">

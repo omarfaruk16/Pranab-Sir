@@ -186,11 +186,6 @@ export default function Publications() {
       .filter((p) => !tagForTheme || hasTag(p, tagForTheme))
   }, [tab, search, yearRange, tagFilter, researchThemeFilter, fuse])
 
-  const allTags = useMemo(() => {
-    const set = new Set()
-    allPublications.forEach((p) => (p.tags || []).forEach((t) => set.add(t)))
-    return Array.from(set).sort()
-  }, [])
 
   return (
     <div className="bg-neutral-paper dark:bg-navy-950 min-h-screen">
@@ -242,29 +237,6 @@ export default function Publications() {
                   onChange={(e) => setYearRange([yearRange[0], Number(e.target.value)])}
                   className="w-20 px-2 py-2 rounded border border-neutral-mist dark:border-navy-700 bg-white dark:bg-navy-800"
                 />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-navy-700 dark:text-neutral-stone mb-2">Theme / tag</label>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={() => setTagFilter(null)}
-                  className={`text-xs px-3 py-1.5 rounded-lg ${!tagFilter ? 'bg-accent-emerald text-white' : 'bg-neutral-mist/60 dark:bg-navy-700'}`}
-                >
-                  All
-                </button>
-                {allTags.map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    onClick={() => setTagFilter(tagFilter === t ? null : t)}
-                    className={`text-xs px-3 py-1.5 rounded-lg ${tagFilter === t ? 'bg-accent-emerald text-white' : 'bg-neutral-mist/60 dark:bg-navy-700 hover:bg-navy-200 dark:hover:bg-navy-600'}`}
-                  >
-                    {t}
-                  </button>
-                ))}
               </div>
             </div>
 
